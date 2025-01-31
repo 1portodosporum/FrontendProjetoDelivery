@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './pages/home/Home';
 import Cadastro from './pages/cadastro/Cadastro';
 
 import { ToastContainer } from 'react-toastify'
