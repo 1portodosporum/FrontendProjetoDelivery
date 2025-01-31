@@ -145,8 +145,8 @@ export const FormProduto = () => {
           <input 
           type="checkbox"
           name="saudavel"
-          // value={produto.saudavel}
-          onChange={updateState}
+          checked={produto.saudavel || false} 
+          onChange={(e) => setProduto({ ...produto, saudavel: e.target.checked })}
           className="mr-2" />
           <label className="text-sm">Produto saudável?</label>
         </div>
