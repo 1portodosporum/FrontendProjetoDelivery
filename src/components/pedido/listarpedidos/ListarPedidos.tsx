@@ -19,7 +19,7 @@ const ListarPedidos = () => {
     const findByPedidos = async() => {
         try{
         await pedidoServices.listPedidos('/pedidos', setPedidos, { 
-            headers: { Authorization: `Bearer ${token}` } 
+            headers: { "Authorization": token } 
         });
         } catch(error: any){
             if(error.toString().includes('403')){
