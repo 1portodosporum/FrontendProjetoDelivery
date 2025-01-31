@@ -12,6 +12,12 @@ export default function Home() {
 
         </div>
       </section>
+      <section className="h-screen flex items-center justify-center bg-gray-200">
+        <div className="text-center">
+          <h2 className="text-5xl font-bold text-gray-800">Sobre Nós</h2>
+          <p className="text-xl text-gray-600 mt-4">Informações sobre o delivery...</p>
+        </div>
+      </section>
       
     </div>
   );
