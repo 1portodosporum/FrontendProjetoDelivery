@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
         <div className="relative text-center text-white px-4">
           <h1 className="text-7xl md:text-7xl font-bold mb-6">Delivey Comida</h1>
           <p className="text-xl md:text-2xl mb-8">comida blablablablablablabla</p>
+          <Link to="/pedido">Carrinho</Link>
 
         </div>
       </section>
