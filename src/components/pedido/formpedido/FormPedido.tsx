@@ -1,6 +1,3 @@
-import { useState } from "react";
-import Pedido from "../../../models/Pedido";
-
 export const FormPedido = () => {
   return (
     <div className="max-w-md mt-16 mx-auto p-6 bg-white shadow-lg rounded-xl">
