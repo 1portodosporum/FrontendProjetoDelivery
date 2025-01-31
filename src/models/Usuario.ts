@@ -8,7 +8,7 @@ interface Usuario {
     foto: string;
     tipo: string;
     endereco: string;
-    pedido: Pedido;
+    pedido?: Pedido;
 }
 
 export default Usuario;
