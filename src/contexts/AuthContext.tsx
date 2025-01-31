@@ -61,7 +61,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
             usuario: "",
             senha: "",
             foto: "",
-            token: ""
+            token: "",
+            tipo: ""
         })
         localStorage.removeItem("usuario")
     }
