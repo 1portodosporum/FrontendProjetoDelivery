@@ -1,15 +1,9 @@
-import Pedido from "../models/Pedido";
 import baseApi from "./baseApi";
 
 class PedidoServices{
 
-    createPedido = async(url: string, pedido: Pedido, setDados: Function, header: Object) => {
-        try {
-            const response = await baseApi.post(url, pedido, header);
-            setDados(response.data);
-        } catch (error) {
-            console.log(error);
-        }
+    createPedido = async(url: string, pedido: Object, header: Object) => {
+        await baseApi.post(url, pedido, header);
     }
 
     listPedidos = async(url: string, setDados: Function, header: Object) => {
