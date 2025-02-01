@@ -4,9 +4,12 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { useContext } from "react";
 
 
+
+
+
 function Navbar() {
 
-    const {handleLogout} = useContext(AuthContext);
+    const {handleLogout, usuario} = useContext(AuthContext);
 
     return (
         <nav className="bg-orange-500 shadow-sm w-auto">
@@ -26,18 +29,28 @@ function Navbar() {
                             <Link to="/home" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
                                 Início
                             </Link>
-                            <Link to="/cardapio" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
-                                Cardápio
-                            </Link>
-                            <Link to="/pedidos" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
-                                Pedido
-                            </Link>
-                            <Link to="/cadastrarpedido" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
-                                Cadastrar Pedido
-                            </Link>
-                            <Link to="/cadastrarproduto" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
-                                Cadastrar Produto
-                            </Link>
+
+                            {usuario.tipo === "Cliente" && (
+                                <>
+                                    <Link to="/cardapio" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                                        Cardápio
+                                    </Link>
+                                    <Link to="/pedidos" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                                        Meus Pedidos
+                                    </Link>
+                                </>
+                            )}
+
+                            {usuario.tipo === "Restaurante" && (
+                                <>
+                                    <Link to="/cadastrarpedido" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                                        Cadastrar Pedido
+                                    </Link>
+                                    <Link to="/cadastrarproduto" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                                        Cadastrar Produto
+                                    </Link>
+                                </>
+                            )}
                             <button className="bg-red-600 duration-700 hover:bg-red-400 text-white px-8 py-3 rounded-full text-base font-semibold flex items-center" onClick={handleLogout}>
                                 Sair
                                 <LogIn className="ml-2 h-5 w-5" />
