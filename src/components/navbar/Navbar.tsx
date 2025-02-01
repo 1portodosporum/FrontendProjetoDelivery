@@ -35,7 +35,7 @@ function Navbar() {
                                     <Link to="/cardapio" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
                                         Cardápio
                                     </Link>
-                                    <Link to="/pedidos" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                                    <Link to="/meuspedidos" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
                                         Meus Pedidos
                                     </Link>
                                 </>

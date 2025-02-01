@@ -11,6 +11,7 @@ import Navbar from './components/navbar/Navbar';
 import Home from './pages/home/Home';
 import { FormPedido } from './components/pedido/formpedido/FormPedido';
 import ListarProdutos from './components/produto/listarproduto/ListarProdutos';
+import ListarMeusPedidos from './components/pedido/listarmeuspedidos/ListarMeusPedidos';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/cardapio" element={<ListarProdutos />} />
               <Route path="/pedidos" element={<ListarPedidos />} />
+              <Route path="/meuspedidos" element={<ListarMeusPedidos />} />
               <Route path="/cadastrarproduto" element={<FormProduto />} />
               <Route path="/cadastrarproduto/:id" element={<FormProduto />} />
               <Route path="/cadastrarpedido" element={<FormPedido />} />
