@@ -20,7 +20,7 @@ function App() {
       <AuthProvider>
         <ToastContainer />
         <BrowserRouter>
-          <header>
+          <header className='sticky top-0 z-50'>
             <Navbar />
           </header>
           <main>
