@@ -15,13 +15,17 @@ const CardPedido = ({ pedido }: CardPedidoProps) => {
     return (
         <div className="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden w-80 border border-gray-200">
             <div className="px-6 py-4">
-                <h5 className="text-lg font-semibold text-gray-800">Pedido #{pedido.id}</h5>
-                <p className="text-gray-600">Cliente: <span className="font-medium">{pedido.usuario?.nome}</span></p>
-                {pedido.data_pedido && (
+                <div className="flex justify-between items-center">
+                    <h5 className="text-lg font-semibold text-gray-800">Pedido #{pedido.id}</h5>
+                    {pedido.data_pedido && (
                     <p className="text-gray-500 text-sm">
                         Data: {pedido.data_pedido ? new Date(pedido.data_pedido).toLocaleDateString() : ""}
                     </p>
                 )}
+                </div>
+                <p className="text-gray-600">Cliente: <span className="font-medium">{pedido.usuario?.nome}</span></p>
+                <p className="text-gray-600">Produto: <span className="font-medium">{pedido.produto?.nome}</span></p>
+                <p className="text-gray-600">Quantidade: <span className="font-medium">{pedido.quantidade}</span></p>
                 <p className="text-green-600 font-bold mt-2">Total: R$ {pedido.preco_total?.toFixed(2)}</p>
                 <p className={`mt-2 px-3 py-1 inline-block rounded-lg text-sm font-medium 
                     ${pedido.status === "Pendente" ? "bg-yellow-200 text-yellow-700" :
