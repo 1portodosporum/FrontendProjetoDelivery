@@ -24,11 +24,11 @@ const CardProduto = ({ produto }: CardProdutoProps) => {
         setModalAberto(true);
     };
 
-
     const fecharModal = () => {
         setModalAberto(false);
         setQuantidade(1);
     };
+
     const confirmarPedido = async () => {
         const pedido = {
             quantidade: quantidade,
