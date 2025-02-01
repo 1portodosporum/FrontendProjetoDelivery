@@ -49,6 +49,11 @@ function Navbar() {
                                     <Link to="/cadastrarproduto" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
                                         Cadastrar Produto
                                     </Link>
+
+                                    <Link to="/cardapio" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                                        Meus produtos
+                                    </Link>     
+                                    
                                 </>
                             )}
                             <button className="bg-red-600 duration-700 hover:bg-red-400 text-white px-8 py-3 rounded-full text-base font-semibold flex items-center" onClick={handleLogout}>
