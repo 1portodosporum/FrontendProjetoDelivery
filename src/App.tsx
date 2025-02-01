@@ -31,6 +31,7 @@ function App() {
               <Route path="/cardapio" element={<ListarProdutos />} />
               <Route path="/pedidos" element={<ListarPedidos />} />
               <Route path="/cadastrarproduto" element={<FormProduto />} />
+              <Route path="/cadastrarproduto/:id" element={<FormProduto />} />
               <Route path="/cadastrarpedido" element={<FormPedido />} />
             </Routes>
           </main>
