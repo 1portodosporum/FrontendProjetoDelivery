@@ -1,12 +1,12 @@
-import { useNavigate } from "react-router-dom";
-import PedidoServices from "../../../services/PedidoServices";
-import Pedido from "../../../models/Pedido";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
-import { toast } from "react-toastify";
 import CardPedido from "../cardpedido/CardPedido";
+import Pedido from "../../../models/Pedido";
+import PedidoServices from "../../../services/PedidoServices";
+import { useNavigate } from "react-router-dom";
+import { ToastAlert } from "../../../utils/ToastAlert";
 
-const ListarPedidos = () => {
+const ListarMeusPedidos = () => {
 
     const  pedidoServices = new PedidoServices();
     const navigate = useNavigate();
@@ -30,7 +30,7 @@ const ListarPedidos = () => {
 
     useEffect(() => {
         if(token === ''){
-            toast.error('Você precisa estar logado para acessar essa página');
+            ToastAlert('Você precisa estar logado para acessar essa página', 'info');
             navigate('/login');
         }
     }, [token]);
@@ -39,19 +39,15 @@ const ListarPedidos = () => {
         findByPedidos();
     }, [pedidos.length]);
 
-
-
     return (
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
-            <h1 className="text-center font-bold text-3xl mt-10">Listagem de Pedidos</h1>
-            <div className="grid grid-cols-3 gap-4 mt-10">
-                {pedidos.map(pedido => (
+            {pedidos.map((pedido: Pedido) => (
+                pedido.usuario?.id === usuario.id && (
                     <CardPedido key={pedido.id} pedido={pedido} />
-                ))}
-            </div>
-        </section>
+                )
+            ))}
+        </ section>
     );
-
 }
 
-export default ListarPedidos;
+export default ListarMeusPedidos;
