@@ -5,7 +5,7 @@ import ProdutoServices from "../../../services/ProdutoServices";
 import Produto from "../../../models/Produto";
 import CardProduto from "../cardproduto/CardProduto";
 
-function ListaProdutos() {
+function ListarProdutos() {
 
     const navigate = useNavigate();
 
@@ -53,4 +53,4 @@ function ListaProdutos() {
     );
 }
 
-export default ListaProdutos;
+export default ListarProdutos;
