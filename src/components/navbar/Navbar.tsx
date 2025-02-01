@@ -9,8 +9,8 @@ function Navbar() {
     const {handleLogout} = useContext(AuthContext);
 
     return (
-        <nav className="bg-orange-500 shadow-sm">
-            <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav className="bg-orange-500 shadow-sm w-auto">
+            <div className="mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     
                     <div className="flex-shrink-0">
@@ -21,7 +21,7 @@ function Navbar() {
                     </div>
 
                    
-                    <div className="md:flex md:items-center">
+                    <div className="md:flex md:items-center md:space-x-6">
                         <div className="ml-10 flex items-center space-x-4">
                             <Link to="/home" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
                                 Início
