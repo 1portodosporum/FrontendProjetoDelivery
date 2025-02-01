@@ -4,7 +4,7 @@ import './Home.css';
 export default function Home() {
   return (
     <div className="min-h-screen w-full overflow-y-auto">
-      <section className="relative h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('src/assets/photo-1504674900247-0877df9cc836.webp')" }}> 
+      <section className="relative h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('https://images.pexels.com/photos/2403392/pexels-photo-2403392.jpeg')" }}> 
         <div className="absolute inset-0 bg-black/60" />
 
         <div className="relative text-center text-white px-4">
