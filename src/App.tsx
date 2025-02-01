@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './pages/home/Home';
 import Cadastro from './pages/cadastro/Cadastro';
 
 import { ToastContainer } from 'react-toastify'
@@ -7,6 +6,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from './contexts/AuthContext';
 import Login from './pages/login/Login';
 import ListarPedidos from './components/pedido/listarpedidos/ListarPedidos';
+import { FormProduto } from './components/produto/formproduto/FormProduto';
+import Navbar from './components/navbar/Navbar';
+import Home from './pages/home/Home';
+import { FormPedido } from './components/pedido/formpedido/FormPedido';
 
 function App() {
   return (
@@ -14,12 +17,20 @@ function App() {
       <AuthProvider>
         <ToastContainer />
         <BrowserRouter>
-          <Routes>
-            <Route path="/cadastro" element={<Cadastro />} />
-            <Route path="/" element={<Login />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/pedido" element={<ListarPedidos />} />
-          </Routes>
+          <header>
+            <Navbar />
+          </header>
+          <main>
+            <Routes>
+              <Route path="/cadastro" element={<Cadastro />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/" element={<Login />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/pedidos" element={<ListarPedidos />} />
+              <Route path="/cadastrarproduto" element={<FormProduto />} />
+              <Route path="/cadastrarpedido" element={<FormPedido />} />
+            </Routes>
+          </main>
         </BrowserRouter>
       </AuthProvider>
     </>

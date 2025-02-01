@@ -1,9 +1,16 @@
-import { ShoppingBag, LogIn } from 'lucide-react';
+import { LogIn, ShoppingBag } from "lucide-react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
+import { useContext } from "react";
+
 
 function Navbar() {
+
+    const {handleLogout} = useContext(AuthContext);
+
     return (
-        <nav className="bg-orange-500 shadow-sm">
-            <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav className="bg-orange-500 shadow-sm w-auto">
+            <div className="mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     
                     <div className="flex-shrink-0">
@@ -14,16 +21,25 @@ function Navbar() {
                     </div>
 
                    
-                    <div className="md:flex md:items-center">
+                    <div className="md:flex md:items-center md:space-x-6">
                         <div className="ml-10 flex items-center space-x-4">
-                            <a href="#" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                            <Link to="/home" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
                                 Início
-                            </a>
-                            <a href="#" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                            </Link>
+                            <Link to="/produtos" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
                                 Cardápio
-                            </a>
-                            <button className="bg-yellow-400 duration-700 hover:bg-yellow-500 text-white px-8 py-3 rounded-full text-base font-semibold flex items-center">
-                                Login
+                            </Link>
+                            <Link to="/pedidos" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                                Pedido
+                            </Link>
+                            <Link to="/cadastrarpedido" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                                Cadastrar Pedido
+                            </Link>
+                            <Link to="/cadastrarproduto" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                                Cadastrar Produto
+                            </Link>
+                            <button className="bg-red-600 duration-700 hover:bg-red-400 text-white px-8 py-3 rounded-full text-base font-semibold flex items-center" onClick={handleLogout}>
+                                Sair
                                 <LogIn className="ml-2 h-5 w-5" />
                             </button>
                         </div>

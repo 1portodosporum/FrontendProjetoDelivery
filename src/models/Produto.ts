@@ -7,8 +7,8 @@ interface Produto {
     imagem: string;
     descricao: string;
     saudavel: boolean;
-    pedido: Pedido;
     categoria: string;
+    pedido?: Pedido;
 }
 
 export default Produto;
