@@ -8,6 +8,7 @@ interface Produto {
     descricao: string;
     saudavel: boolean;
     pedido: Pedido;
+    categoria: string;
 }
 
 export default Produto;
