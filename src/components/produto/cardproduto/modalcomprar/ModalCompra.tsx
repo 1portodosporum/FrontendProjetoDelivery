@@ -1,4 +1,4 @@
-import Modal from "../../../ui/Modal";
+import Modal from "../../../../ui/Modal";
 import Produto from "../../../../models/Produto";
 
 interface ModalComprarProps {

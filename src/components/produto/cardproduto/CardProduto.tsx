@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Salad } from 'lucide-react';
+import { Pencil, Salad, Trash2 } from 'lucide-react';
 import Produto from "../../../models/Produto";
 import { useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthContext';
@@ -26,22 +26,23 @@ const CardProduto = ({ produto }: CardProdutoProps) => {
             </button>
         </div>
     )
-
+    
     const botoesRestaurante = (
-        <div className="flex justify-between px-6 py-4">
+        <div className="flex gap-2 px-4 py-2">
             <Link
                 to={`/cadastrarproduto/${produto.id}`}
-                className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300">
-                Editar
+                className="p-2 rounded-md bg-gray-200 text-gray-600 hover:bg-gray-300 transition duration-200">
+                <Pencil size={18} />
             </Link>
             <Link
                 to={`/deletarproduto/${produto.id}`}
-                className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300">
-                Deletar
+                className="p-2 rounded-md bg-gray-200 text-red-600 hover:bg-gray-300 transition duration-200">
+                <Trash2 size={18} />
             </Link>
         </div>
-    )
+    );
     
+
     return (
         <div className="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden w-80">
             <img
