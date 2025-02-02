@@ -1,7 +1,7 @@
 import Pedido from "./Pedido";
 
 interface Produto {
-    id?: number;
+    id: number;
     nome: string;
     preco: number;
     imagem: string;

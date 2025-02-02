@@ -15,6 +15,7 @@ export const usePedido = () => {
 
 
     const pedidoServices = new PedidoServices();
+    const produtoServices = new PedidoServices();
 
     const abrirModal = () => setModalAberto(true);
     const fecharModal = () => {
@@ -49,7 +50,7 @@ export const usePedido = () => {
 
     const removerPedido = async (id: string) => {
         try {
-            await pedidoServices.deletePedido(`/pedidos/${id}`, {
+            await produtoServices.deletePedido(`/produtos/${id}`, {
                 headers: {
                     Authorization: token,
                 },
@@ -59,7 +60,7 @@ export const usePedido = () => {
             ToastAlert("Erro ao remover pedido!", "error");
         }
         fecharModalDelete();
-        window.location.reload();
+        // window.location.reload();
     }
 
 

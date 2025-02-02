@@ -19,7 +19,7 @@ const ModalDeleteProduto = ({ produto, fecharModalDelete, removerPedido }: Modal
                     Cancelar
                 </button>
                 <button
-                    onClick={() => removerPedido(produto.id?.toString() || "")}
+                    onClick={() => removerPedido(produto.id.toString())}
                     className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
                     Excluir
                 </button>
