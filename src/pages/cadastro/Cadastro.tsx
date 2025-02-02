@@ -141,6 +141,7 @@ function Cadastro() {
               value={usuario.tipo}
               required
             >
+              <option value="">Selecione ...</option>
               <option value="Cliente">Cliente</option>
               <option value="Restaurante">Restaurante</option>
             </select>
