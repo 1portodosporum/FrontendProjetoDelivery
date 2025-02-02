@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthContext';
 import ModalComprar from './modalcomprar/ModalCompra';
 import { usePedido } from '../../../hooks/usePedido';
+import ModalDeleteProduto from '../modaldeleteproduto/ModalDeleteProduto';
 
 interface CardProdutoProps {
     produto: Produto;
@@ -14,7 +15,9 @@ const CardProduto = ({ produto }: CardProdutoProps) => {
     const { usuario } = useContext(AuthContext);
     const {
         modalAberto, abrirModal, fecharModal,
-        quantidade, setQuantidade, confirmarPedido
+        quantidade, setQuantidade, confirmarPedido,
+        modalDeleteAberto, abrirModalDelete, fecharModalDelete,
+        removerPedido
     } = usePedido();
 
     const botaoComprar = (
@@ -34,11 +37,11 @@ const CardProduto = ({ produto }: CardProdutoProps) => {
                 className="p-2 rounded-md bg-gray-200 text-gray-600 hover:bg-gray-300 transition duration-200">
                 <Pencil size={18} />
             </Link>
-            <Link
-                to={`/deletarproduto/${produto.id}`}
+            <button
+                onClick={abrirModalDelete}
                 className="p-2 rounded-md bg-gray-200 text-red-600 hover:bg-gray-300 transition duration-200">
                 <Trash2 size={18} />
-            </Link>
+            </button>
         </div>
     );
     
@@ -72,6 +75,15 @@ const CardProduto = ({ produto }: CardProdutoProps) => {
                     confirmarPedido={() => confirmarPedido(produto)}
                 />
             )}
+            {
+                modalDeleteAberto && (
+                    <ModalDeleteProduto
+                        produto={produto}
+                        fecharModalDelete={fecharModalDelete}
+                        removerPedido={() => removerPedido(produto.id?.toString() || '')}
+                    />
+                )
+            }
         </div>
     );
 };

@@ -11,6 +11,9 @@ export const usePedido = () => {
     const [modalAberto, setModalAberto] = useState(false);
     const [quantidade, setQuantidade] = useState(1);
 
+    const [modalDeleteAberto, setModalDeleteAberto] = useState(false);
+
+
     const pedidoServices = new PedidoServices();
 
     const abrirModal = () => setModalAberto(true);
@@ -18,6 +21,11 @@ export const usePedido = () => {
         setModalAberto(false);
         setQuantidade(1);
     };
+
+    const abrirModalDelete = () => setModalDeleteAberto(true);
+    const fecharModalDelete = () => setModalDeleteAberto(false);
+
+
 
     const confirmarPedido = async (produto: Produto) => {
         const pedido = {
@@ -39,6 +47,22 @@ export const usePedido = () => {
         fecharModal();
     };
 
+    const removerPedido = async (id: string) => {
+        try {
+            await pedidoServices.deletePedido(`/pedidos/${id}`, {
+                headers: {
+                    Authorization: token,
+                },
+            });
+            ToastAlert("Pedido removido com sucesso!", "success");
+        } catch (error) {
+            ToastAlert("Erro ao remover pedido!", "error");
+        }
+        fecharModalDelete();
+        window.location.reload();
+    }
+
+
     return {
         modalAberto,
         abrirModal,
@@ -46,5 +70,9 @@ export const usePedido = () => {
         quantidade,
         setQuantidade,
         confirmarPedido,
+        modalDeleteAberto,
+        abrirModalDelete,
+        fecharModalDelete,
+        removerPedido
     };
 };
