@@ -131,14 +131,20 @@ export const FormProduto = () => {
 
         <div>
           <label className="block text-sm">Categoria</label>
-          <input
-            type="text"
+          <select 
             name="categoria"
+            id="categoria"
             value={produto.categoria}
-            onChange={updateState}
-            className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-      focus:outline-none focus:border-violet-500 focus:ring-1 focus:violet-500"
-          />
+            required
+            onChange={(e) => setProduto({ ...produto, categoria: e.target.value })}
+            className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-violet-500 focus:ring-1 focus:violet-500">
+            <option value=""> Selecione ...</option>
+            <option value="Bebida">Bebida</option>
+            <option value="Comida">Comida</option>
+            <option value="Lanche">Lanche</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Sobremesa">Sobremesa</option>
+          </select>
         </div>
 
         <div className="flex items-center">
