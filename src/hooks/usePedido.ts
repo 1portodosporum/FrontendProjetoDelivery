@@ -60,7 +60,10 @@ export const usePedido = () => {
             ToastAlert("Erro ao remover pedido!", "error");
         }
         fecharModalDelete();
-        // window.location.reload();
+        //atualiar a pagina depois de fechar o toast alert
+        setTimeout(() => {
+            window.location.reload();
+        }, 3000);
     }
 
 
