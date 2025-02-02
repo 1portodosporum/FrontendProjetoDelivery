@@ -80,7 +80,7 @@ const CardProduto = ({ produto }: CardProdutoProps) => {
                     <ModalDeleteProduto
                         produto={produto}
                         fecharModalDelete={fecharModalDelete}
-                        removerPedido={() => removerPedido(produto.id?.toString() || '')}
+                        removerPedido={() => removerPedido(produto.id.toString())}
                     />
                 )
             }
