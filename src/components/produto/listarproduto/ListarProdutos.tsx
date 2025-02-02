@@ -44,11 +44,11 @@ function ListarProdutos() {
 
     return (
         <>
-            <div className="flex flex-wrap justify-center gap-4 p-10">
+            <section className="flex flex-wrap justify-center gap-4 p-10">
                 {produtos.map((produto) => (
                     <CardProduto key={produto.id} produto={produto} />
                 ))}
-            </div>
+            </section>
         </>
     );
 }
