@@ -1,4 +1,4 @@
-import { useState, useEffect, ChangeEvent, FormEvent } from 'react'
+import { useState, ChangeEvent } from 'react'
 import { Link, useNavigate } from "react-router-dom"
 import Usuario from '../../models/Usuario'
 import UsuarioServices from '../../services/UsuarioServices';
@@ -62,19 +62,30 @@ function Cadastro() {
 
   return (
 
-      <div className="min-h-screen bg-gray-50 pt-10">
-        <section className="max-w-md mt-7 mx-auto p-6 bg-white shadow-lg rounded-xl">
-            <h2 className="text-3xl font-bold mb-4 text-center">Criar Conta</h2>
-            <p className="text-center text-sm text-gray-600">
+    <div className="min-h-screen bg-gray-50 pt-10">
+      <section className="max-w-md mt-7 mx-auto p-6 bg-white shadow-lg rounded-xl">
+        <h2 className="text-3xl font-bold mb-4 text-center">Criar Conta</h2>
+        <p className="text-center text-sm text-gray-600">
           Já tem uma conta?{' '}
           <Link to="/login" className="font-medium text-red-600 hover:text-red-500">
             Faça login
           </Link>
-            </p>
+        </p>
 
         <form onSubmit={cadastrar} className="space-y-4 mt-5">
           <div>
             <label className="block text-sm">Nome</label>
+            <input
+              type="text"
+              name="nome"
+              placeholder="Seu nome"
+              className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500"
+              value={usuario.nome}
+              onChange={atualizarEstado}
+            />
+          </div>
+          <div>
+            <label className="block text-sm">Email</label>
             <input
               type="text"
               name="usuario"
@@ -123,14 +134,16 @@ function Cadastro() {
 
           <div>
             <label className="block text-sm">Tipo</label>
-            <input
-              type="text"
-              name="tipo"
-              placeholder="Tipo"
+            <select
+              name="tipo" id="tipo"
               className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500"
+              onChange={(e) => setUsuario({ ...usuario, tipo: e.target.value })}
               value={usuario.tipo}
-              onChange={atualizarEstado}
-            />
+              required
+            >
+              <option value="Cliente">Cliente</option>
+              <option value="Restaurante">Restaurante</option>
+            </select>
           </div>
 
           <div>
@@ -158,11 +171,11 @@ function Cadastro() {
             className="w-full mt-2 rounded-md bg-gray-400 text-white py-2 font-semibold hover:bg-gray-600 transition duration-700"
             onClick={retornar}
           >
-          Voltar
-         </button>
-       </form>
-    </section>
-  </div>
+            Voltar
+          </button>
+        </form>
+      </section>
+    </div>
   )
 }
 
