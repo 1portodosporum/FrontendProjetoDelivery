@@ -62,7 +62,7 @@ function ListarProdutos() {
                         </button>
                         <button
                             className={`flex items-center gap-2 px-4 py-2 rounded-lg z-50 transition ${
-                                categoriaSelecionada === "Bebida" ? "bg-blue-500 text-white" : "bg-gray-300 text-gray-800"
+                                categoriaSelecionada === "Bebida" ? "bg-orange-500 text-white" : "bg-gray-300 text-gray-800"
                             }`}
                             onClick={() => setCategoriaSelecionada("Bebida")}
                         >
@@ -71,7 +71,7 @@ function ListarProdutos() {
                         </button>
                         <button
                             className={`flex items-center gap-2 px-4 py-2 rounded-lg z-50 transition ${
-                                categoriaSelecionada === "Comida" ? "bg-blue-500 text-white" : "bg-gray-300 text-gray-800"
+                                categoriaSelecionada === "Comida" ? "bg-orange-500 text-white" : "bg-gray-300 text-gray-800"
                             }`}
                             onClick={() => setCategoriaSelecionada("Comida")}
                         >
@@ -79,7 +79,7 @@ function ListarProdutos() {
                         </button>
                         <button
                             className={`flex items-center gap-2 px-4 py-2 rounded-lg z-50 transition ${
-                                categoriaSelecionada === "Sobremesa" ? "bg-blue-500 text-white" : "bg-gray-300 text-gray-800"
+                                categoriaSelecionada === "Sobremesa" ? "bg-orange-500 text-white" : "bg-gray-300 text-gray-800"
                             }`}
                             onClick={() => setCategoriaSelecionada("Sobremesa")}
                         >
@@ -87,7 +87,7 @@ function ListarProdutos() {
                         </button>
                         <button
                             className={`flex items-center gap-2 px-4 py-2 rounded-lg z-50 transition ${
-                                categoriaSelecionada === "Pizza" ? "bg-blue-500 text-white" : "bg-gray-300 text-gray-800"
+                                categoriaSelecionada === "Pizza" ? "bg-orange-500 text-white" : "bg-gray-300 text-gray-800"
                             }`}
                             onClick={() => setCategoriaSelecionada("Pizza")}
                         >
@@ -95,7 +95,7 @@ function ListarProdutos() {
                         </button>
                         <button
                             className={`flex items-center gap-2 px-4 py-2 rounded-lg z-50 transition ${
-                                categoriaSelecionada === "Lanche" ? "bg-blue-500 text-white" : "bg-gray-300 text-gray-800"
+                                categoriaSelecionada === "Lanche" ? "bg-orange-500 text-white" : "bg-gray-300 text-gray-800"
                             }`}
                             onClick={() => setCategoriaSelecionada("Lanche")}
                         >

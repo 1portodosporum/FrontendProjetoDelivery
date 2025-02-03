@@ -51,7 +51,7 @@ export const ListarPedidos = () => {
         <input
           type="text"
           placeholder="Buscar por nome do produto..."
-          className="w-full p-2 border border-gray-300 text-gray-700 after:ml-0.5 focus:border-[#f97216] focus:ring-1 focus:ring-[#f97216] rounded-md placeholder:text-gray-500 placeholder:italic"
+          className="w-full p-2 border border-gray-300 text-gray-700 after:ml-0.5 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 rounded-md placeholder:text-gray-500 placeholder:italic"
           value={pesquisarPorNome}
           onChange={(e) => setPesquisarPorNome(e.target.value)}
         />
