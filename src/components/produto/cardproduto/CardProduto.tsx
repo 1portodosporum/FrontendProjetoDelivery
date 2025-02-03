@@ -59,13 +59,13 @@ const CardProduto = ({ produto }: CardProdutoProps) => {
   );
 
   return (
-    <div className="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden min-w-[300px] max-w-[300px]">
+    <div className="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden min-w-[300px] max-w-[300px] min-h-[450px] max-h-[450px]">
       <img
-        src={produto.imagem || 'https://via.placeholder.com/300x200'}
+        src={produto.imagem || 'https://static.vecteezy.com/ti/vetor-gratis/p1/7276103-fast-food-set-icons-fastfood-background-doodle-fast-food-icons-food-icons-on-white-background-hand-afogar-fast-food-set-icons-vetor.jpg'}
         alt={produto.nome}
         className="w-full h-48 object-cover"
       />
-      <div className="px-6 py-4">
+      <div className="px-6 py-4 flex-grow">
         <h5 className="text-xl font-semibold text-gray-800 flex items-center gap-2">
           {produto.saudavel && <Salad className="text-green-500 h-5 w-5" />}
           {produto.nome}
@@ -75,9 +75,9 @@ const CardProduto = ({ produto }: CardProdutoProps) => {
         </p>
         <p className="text-gray-600">Descrição: {produto.descricao}</p>
       </div>
-
-      {usuario.tipo === 'Restaurante' ? botoesRestaurante : botaoComprar}
-
+  
+      <div className="mt-auto">{usuario.tipo === 'Restaurante' ? botoesRestaurante : botaoComprar}</div>
+  
       {modalAberto && (
         <ModalComprar
           produto={produto}
