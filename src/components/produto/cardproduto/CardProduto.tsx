@@ -47,7 +47,7 @@ const CardProduto = ({ produto }: CardProdutoProps) => {
     
 
     return (
-        <div className="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden w-80">
+        <div className="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden min-w-[280px] max-w-[320px]">
             <img
                 src={produto.imagem || 'https://via.placeholder.com/300x200'}
                 alt={produto.nome}
