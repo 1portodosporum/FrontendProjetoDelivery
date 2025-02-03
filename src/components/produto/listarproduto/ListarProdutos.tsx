@@ -96,7 +96,7 @@ function ListarProdutos() {
                     <button
                         className={`flex items-center gap-2 px-4 py-2 rounded-lg z-50 transition ${categoriaSelecionada === "Vegano" ? "bg-orange-500 text-white" : "bg-orange-100 text-gray-800 hover:bg-orange-200"
                             }`}
-                        onClick={() => setCategoriaSelecionada("Lanche")}
+                        onClick={() => setCategoriaSelecionada("Vegano")}
                     >
                         <Sandwich size={20} /> Veganos
                     </button>
