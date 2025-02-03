@@ -1,12 +1,13 @@
 import { Link, useNavigate } from 'react-router-dom';
 import './Home.css';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import CardProduto from '../../components/produto/cardproduto/CardProduto';
+
 import { useContext, useState } from 'react';
 import produtosRecomendado from '../../components/produto/produtos/produtos';
 import { AuthContext } from '../../contexts/AuthContext';
 import ModalLogin from '../../ui/ModalLogin';
 import Footer from '../../components/footer/Footer';
+import CardProdutoRecomendado from '../../components/produto/cardproduto/CardProdutoRecomendado';
 
 export default function Home() {
   const { usuario, handleLogout } = useContext(AuthContext);
@@ -80,7 +81,7 @@ export default function Home() {
                 className="flex space-x-4 transition-transform duration-300 "
                 style={{ transform: `translateX(-${scrollIndex * 250}px)` }}>
                 {produtosRecomendado.map((produto) => (
-                  <CardProduto key={produto.id} produto={produto} />
+                  <CardProdutoRecomendado key={produto.id} produto={produto} />
                 ))}
               </div>
             </div>
