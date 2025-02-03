@@ -64,7 +64,7 @@ function Cadastro() {
 
     <div className="min-h-screen bg-gray-50 pt-10">
       <section className="max-w-md mt-7 mx-auto p-6 bg-white shadow-lg rounded-xl">
-        <h2 className="text-3xl font-bold mb-4 text-center">Criar Conta</h2>
+        <h2 className="text-3xl font-bold mb-4 text-center text-orange-600">Criar Conta</h2>
         <p className="text-center text-sm text-gray-600">
           Já tem uma conta?{' '}
           <Link to="/login" className="font-medium text-orange-600 hover:text-yellow-300">

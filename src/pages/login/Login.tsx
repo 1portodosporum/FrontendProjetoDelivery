@@ -35,12 +35,12 @@ function Login() {
       <div className="min-h-screen bg-gray-50 pt-10 flex items-center justify-center p-4">
         <section className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-xl w-full">
           <div className='flex flex-row justify-center'>
-            <h1 className="text-5xl md:text-5xl font-bold mb-6">
-              AIKI FOME
+            <h1 className="text-5xl md:text-5xl font-bold mb-6 flex justify-center">
+              <img className="w-2/3" src="src/assets/aikifomelaranjao.png" alt="" />
             </h1>
           </div>
-          <h2 className="text-3xl font-bold mb-4 text-center text-gray-800">Bem-vindo</h2>
-          <p className="text-center text-sm text-gray-600">Faça login para continuar</p>
+          <h2 className="text-3xl font-bold mb-4 text-center text-orange-600">Bem-vindo</h2>
+          <p className="text-center text-sm text-orange-600">Faça login para continuar</p>
     
           <form onSubmit={login} className="space-y-4 mt-5">
             <div>
