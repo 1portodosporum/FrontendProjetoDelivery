@@ -1,13 +1,14 @@
 import Pedido from "./Pedido";
 
 interface Produto {
-    id?: number;
+    id: number;
     nome: string;
     preco: number;
     imagem: string;
     descricao: string;
     saudavel: boolean;
-    pedido: Pedido;
+    categoria: string;
+    pedido?: Pedido;
 }
 
 export default Produto;
