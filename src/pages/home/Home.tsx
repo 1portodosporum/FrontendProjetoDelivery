@@ -1,17 +1,20 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Home.css';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import CardProduto from '../../components/produto/cardproduto/CardProduto';
 import { useContext, useState } from 'react';
 import produtosRecomendado from '../../components/produto/produtos/produtos';
 import { AuthContext } from '../../contexts/AuthContext';
-import Footer from '../../components/footer/Footer';
+import ModalLogin from '../../ui/ModalLogin';
 
 export default function Home() {
-  const { usuario } = useContext(AuthContext);
+  const { usuario, handleLogout } = useContext(AuthContext);
 
   const [scrollIndex, setScrollIndex] = useState(0);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const visibleProducts = 3;
+
+  const navigate = useNavigate();
 
   const nextSlide = () => {
     if (scrollIndex < produtosRecomendado.length - visibleProducts) {
@@ -23,6 +26,12 @@ export default function Home() {
     if (scrollIndex > 0) {
       setScrollIndex(scrollIndex - 1);
     }
+  };
+
+  const toLogin = () => {
+    handleLogout();
+    navigate('/login');
+    setIsOpen(false);
   };
 
   return (
@@ -41,7 +50,16 @@ export default function Home() {
 
           {usuario.tipo === 'Cliente' || usuario.token === '' ? (
             <button className="bg-green-600 duration-700 hover:bg-green-400 text-white px-8 py-3 rounded-full text-base font-semibold">
-              {usuario.token === '' ? <Link to="/login">Peça já</Link> : <Link to="/cardapio">Peça já</Link>}
+              {usuario.token === '' ? (
+                <button
+                  onClick={() => {
+                    setIsOpen(true);
+                  }}>
+                  Peça já
+                </button>
+              ) : (
+                <Link to="/cardapio">Peça já</Link>
+              )}
             </button>
           ) : (
             ''
@@ -71,7 +89,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Footer />
+      {isOpen && <ModalLogin setIsOpen={setIsOpen} toLogin={toLogin} />}
     </div>
   );
 }
