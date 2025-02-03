@@ -6,6 +6,7 @@ import { useContext, useState } from 'react';
 import produtosRecomendado from '../../components/produto/produtos/produtos';
 import { AuthContext } from '../../contexts/AuthContext';
 import ModalLogin from '../../ui/ModalLogin';
+import Footer from '../../components/footer/Footer';
 
 export default function Home() {
   const { usuario, handleLogout } = useContext(AuthContext);
@@ -89,6 +90,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Footer />
       {isOpen && <ModalLogin setIsOpen={setIsOpen} toLogin={toLogin} />}
     </div>
   );
