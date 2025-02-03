@@ -5,12 +5,12 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from './contexts/AuthContext';
 import Login from './pages/login/Login';
-import ListarPedidos from './components/pedido/listarpedidos/ListarPedidos';
 import { FormProduto } from './components/produto/formproduto/FormProduto';
 import Navbar from './components/navbar/Navbar';
 import Home from './pages/home/Home';
 import ListarProdutos from './components/produto/listarproduto/ListarProdutos';
 import ListarMeusPedidos from './components/pedido/listarmeuspedidos/ListarMeusPedidos';
+import { ListarPedidos } from './components/pedido/listarpedidos/ListarPedidos';
 
 
 function App() {
