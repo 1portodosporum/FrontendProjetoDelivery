@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { toast } from "react-toastify";
 import CardPedido from "../cardpedido/CardPedido";
+import { FallingLines } from "react-loader-spinner";
 
 export const ListarPedidos = () => {
   const pedidoServices = new PedidoServices();
@@ -16,7 +17,10 @@ export const ListarPedidos = () => {
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
 
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   const findByPedidos = async () => {
+    setIsLoading(true);
     try {
       await pedidoServices.listPedidos("/pedidos", setPedidos, {
         headers: { Authorization: token },
@@ -26,6 +30,7 @@ export const ListarPedidos = () => {
         handleLogout();
       }
     }
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -58,13 +63,19 @@ export const ListarPedidos = () => {
       </div>
 
       <div className="flex flex-wrap justify-center gap-6 mt-10 w-full">
-        {pedidosFiltrados.length > 0 ? (
+        {isLoading ?
+          <div className="flex justify-center items-center min-h-[100vh] min-w-[100vw]">
+            <FallingLines
+              color="#4fa94d"
+              width="100"
+              visible={true}
+            />
+          </div>
+          :
           pedidosFiltrados.map((pedido) => (
             <CardPedido key={pedido.id} pedido={pedido} />
           ))
-        ) : (
-          <p className="col-span-3 text-center">Nenhum pedido encontrado.</p>
-        )}
+        }
       </div>
     </div>
   );
