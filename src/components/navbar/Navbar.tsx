@@ -2,6 +2,7 @@ import { LogIn, ShoppingBag } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useContext } from "react";
+import logo from "../../assets/logo aki.png"
 
 function Navbar() {
 
@@ -21,8 +22,9 @@ function Navbar() {
 
                     <div className="flex-shrink-0">
                         <Link to="/" className="flex items-center">
-                            <ShoppingBag className="h-8 w-8 text-white" />
-                            <span className="ml-2 text-2xl font-semibold text-white">AIKI FOME</span>
+                            <span className="ml-2 text-2xl font-semibold text-white">
+                                <img src={logo} alt="logo aki"  className="h-8 w-auto mr-2"/>
+                            </span>
                         </Link>
                     </div>
 
