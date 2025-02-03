@@ -1,6 +1,6 @@
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
-import { Oval, RotatingLines } from 'react-loader-spinner';
+import { Oval } from 'react-loader-spinner';
 import UsuarioLogin from '../../models/UsuarioLogin';
 import { AuthContext } from '../../contexts/AuthContext';
 

@@ -5,6 +5,7 @@ import CardProduto from '../../components/produto/cardproduto/CardProduto';
 import { useContext, useState } from 'react';
 import produtosRecomendado from '../../components/produto/produtos/produtos';
 import { AuthContext } from '../../contexts/AuthContext';
+import Footer from '../../components/footer/Footer';
 
 export default function Home() {
 
@@ -33,8 +34,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/60" />
 
         <div className="relative text-center text-white px-4">
-          <h1 className="text-7xl md:text-7xl font-bold mb-6">Cê ta com fome? Pede ai!</h1>
-          <p className="text-xl md:text-2xl mb-8">Pediu chegou!</p>
+          <h1 className="text-7xl md:text-7xl font-bold mb-6">Seu delivery favorito!</h1>
+          <p className="text-xl md:text-2xl mb-8">com os melhores pratos da cidade. Pediu chegou!</p>
 
           {usuario.tipo === "Cliente" || usuario.token === "" ? (
             <button className='bg-green-600 duration-700 hover:bg-green-400 text-white px-8 py-3 rounded-full text-base font-semibold'>
@@ -64,6 +65,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
