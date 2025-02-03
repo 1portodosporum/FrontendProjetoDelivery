@@ -14,7 +14,7 @@ como desorganização e falta de centralização das informações.**
 <table>
     <tr>
         <th style="width:35%; font-size:20px;"><a href="https://projetodelivery.onrender.com">✨ Deploy / Aiki Fome 🚀</a></th>
-	    <th style="width:35%; font-size:20px;"><a href="https://imagekit.io/dashboard/media-library/detail/67a1279f432c476416641e12">📑 Escopo do Projeto </a></th>
+	    <th style="width:35%; font-size:20px;"><a href="https://docs.google.com/document/d/1Hc_NgIMZYC5_42SiV2SPJaTZg1n7r6hp9oZzalFAlaE/edit?tab=t.0">📑 Escopo do Projeto </a></th>
         <th style="width:35%; font-size:20px;"><a href="https://github.com/1portodosporum/ProjetoDelivery/blob/main/linkfiles/Projeto%20Delivery.pdf">🧩 SpringDoc </a></th>
     </tr>
 </table>
