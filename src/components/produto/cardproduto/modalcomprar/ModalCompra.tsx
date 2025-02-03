@@ -1,5 +1,6 @@
 import Modal from "../../../../ui/Modal";
 import Produto from "../../../../models/Produto";
+import { Oval } from "react-loader-spinner";
 
 interface ModalComprarProps {
     produto: Produto;
@@ -7,9 +8,10 @@ interface ModalComprarProps {
     setQuantidade: (quantidade: number) => void;
     quantidade: number;
     confirmarPedido: () => void;
+    isLoading: boolean;
 }
 
-const ModalComprar = ({ produto, fecharModal, setQuantidade, quantidade, confirmarPedido }: ModalComprarProps) => {
+const ModalComprar = ({ produto, fecharModal, setQuantidade, quantidade, confirmarPedido, isLoading }: ModalComprarProps) => {
     return (
         <Modal titulo="Finalizar Pedido" fecharModal={fecharModal}>
             <p>Produto: <strong>{produto.nome}</strong></p>
@@ -42,8 +44,17 @@ const ModalComprar = ({ produto, fecharModal, setQuantidade, quantidade, confirm
                 </button>
                 <button
                     onClick={confirmarPedido}
-                    className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">
-                    Confirmar Pedido
+                    className="flex justify-center bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 min-w-[155px]">
+                    {isLoading ? <Oval
+                        visible={true}
+                        height="24"
+                        width="24"
+                        color="white"
+                        ariaLabel="oval-loading"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                    /> : 'Confirmar Pedido'}
+
                 </button>
             </div>
         </Modal>
