@@ -1,6 +1,6 @@
 function Sobre() {
   return (
-    <div className="min-h-screen max-w-6xl mx-auto mt-16 px-4 sm:px-8">
+    <div className="min-h-screen max-w-6xl mx-auto mt-16 mb-16 px-4 sm:px-8">
       <h3 className="text-5xl font-bold text-center text-orange-500 mb-16 tracking-wide">
         Conheça nossa história
       </h3>
