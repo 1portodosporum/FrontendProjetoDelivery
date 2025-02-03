@@ -26,7 +26,7 @@ export const usePedido = () => {
     const abrirModalDelete = () => setModalDeleteAberto(true);
     const fecharModalDelete = () => setModalDeleteAberto(false);
 
-
+    const [isLoading, setIsLoading] = useState<boolean>(false)
 
     const confirmarPedido = async (produto: Produto) => {
         const pedido = {
@@ -35,6 +35,8 @@ export const usePedido = () => {
             produto: { id: produto.id },
             usuario: { id: usuario.id },
         };
+
+        setIsLoading(true)
 
         try {
             await pedidoServices.createPedido('/pedidos', pedido, {
@@ -45,10 +47,13 @@ export const usePedido = () => {
             ToastAlert("Erro ao enviar pedido!", "error");
         }
 
+        setIsLoading(false);
+
         fecharModal();
     };
 
     const removerPedido = async (id: string) => {
+        setIsLoading(true)
         try {
             await produtoServices.deletePedido(`/produtos/${id}`, {
                 headers: {
@@ -59,6 +64,7 @@ export const usePedido = () => {
         } catch (error) {
             ToastAlert("Erro ao remover pedido!", "error");
         }
+        setIsLoading(false)
         fecharModalDelete();
         //atualiar a pagina depois de fechar o toast alert
         setTimeout(() => {
@@ -77,6 +83,7 @@ export const usePedido = () => {
         modalDeleteAberto,
         abrirModalDelete,
         fecharModalDelete,
-        removerPedido
+        removerPedido,
+        isLoading
     };
 };

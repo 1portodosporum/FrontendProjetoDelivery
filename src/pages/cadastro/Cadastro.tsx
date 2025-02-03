@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import Usuario from '../../models/Usuario'
 import UsuarioServices from '../../services/UsuarioServices';
 import { ToastAlert } from '../../utils/ToastAlert';
+import { Oval } from 'react-loader-spinner'
 
 function Cadastro() {
   const usuarioServices = new UsuarioServices();
@@ -161,10 +162,18 @@ function Cadastro() {
 
           <button
             type="submit"
-            className="w-full rounded-md bg-orange-500 text-white py-2 font-semibold hover:bg-orange-700 transition duration-700"
+            className="w-full rounded-md bg-orange-500 text-white py-2 font-semibold hover:bg-orange-700 transition duration-700 justify-center"
             disabled={isLoading}
           >
-            {isLoading ? 'Cadastrando...' : 'Cadastrar'}
+            {isLoading ? <Oval
+              visible={true}
+              height="24"
+              width="24"
+              color="white"
+              ariaLabel="oval-loading"
+              wrapperStyle={{}}
+              wrapperClass=""
+            /> : 'Cadastrar'}
           </button>
 
           <button

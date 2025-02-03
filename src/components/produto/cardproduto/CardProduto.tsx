@@ -17,7 +17,7 @@ const CardProduto = ({ produto }: CardProdutoProps) => {
         modalAberto, abrirModal, fecharModal,
         quantidade, setQuantidade, confirmarPedido,
         modalDeleteAberto, abrirModalDelete, fecharModalDelete,
-        removerPedido
+        removerPedido, isLoading
     } = usePedido();
 
     const botaoComprar = (
@@ -73,6 +73,7 @@ const CardProduto = ({ produto }: CardProdutoProps) => {
                     setQuantidade={setQuantidade}
                     quantidade={quantidade}
                     confirmarPedido={() => confirmarPedido(produto)}
+                    isLoading={isLoading}
                 />
             )}
             {
@@ -81,6 +82,7 @@ const CardProduto = ({ produto }: CardProdutoProps) => {
                         produto={produto}
                         fecharModalDelete={fecharModalDelete}
                         removerPedido={() => removerPedido(produto.id.toString())}
+                        isLoading={isLoading}
                     />
                 )
             }

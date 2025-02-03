@@ -4,6 +4,7 @@ import { ChangeEvent, useContext, useEffect, useState } from "react";
 import Produto from "../../../models/Produto";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { ToastAlert } from "../../../utils/ToastAlert";
+import { Oval } from "react-loader-spinner";
 
 export const FormProduto = () => {
 
@@ -51,16 +52,16 @@ export const FormProduto = () => {
   };
 
   const retornar = () => {
-    navigate('/pedidos')
+    navigate('/cardapio')
   }
 
   const createProduto = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
 
-    if(id !== undefined){
-      try{
-        await produtoServices.updateProduto(`/produtos/${id}`, produto, setProduto,{
+    if (id !== undefined) {
+      try {
+        await produtoServices.updateProduto(`/produtos/${id}`, produto, setProduto, {
           headers: { "Authorization": token }
         });
         ToastAlert('Produto atualizado com sucesso', 'success');
@@ -71,7 +72,7 @@ export const FormProduto = () => {
       }
     } else {
       try {
-        await produtoServices.createProduto('/produtos', produto, setProduto,  {
+        await produtoServices.createProduto('/produtos', produto, setProduto, {
           headers: { "Authorization": token }
         });
         ToastAlert('Produto cadastrado com sucesso', 'success');
@@ -131,7 +132,7 @@ export const FormProduto = () => {
 
         <div>
           <label className="block text-sm">Categoria</label>
-          <select 
+          <select
             name="categoria"
             id="categoria"
             value={produto.categoria}
@@ -144,16 +145,17 @@ export const FormProduto = () => {
             <option value="Lanche">Lanche</option>
             <option value="Pizza">Pizza</option>
             <option value="Sobremesa">Sobremesa</option>
+            <option value="Vegano">Vegano</option>
           </select>
         </div>
 
         <div className="flex items-center">
-          <input 
-          type="checkbox"
-          name="saudavel"
-          checked={produto.saudavel || false} 
-          onChange={(e) => setProduto({ ...produto, saudavel: e.target.checked })}
-          className="mr-2" />
+          <input
+            type="checkbox"
+            name="saudavel"
+            checked={produto.saudavel || false}
+            onChange={(e) => setProduto({ ...produto, saudavel: e.target.checked })}
+            className="mr-2" />
           <label className="text-sm">Produto saudável?</label>
         </div>
 
@@ -166,16 +168,25 @@ export const FormProduto = () => {
             value={produto.imagem}
             onChange={updateState}
             placeholder="Foto"
-            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400
-      focus:outline-none focus:border-orange-500 focus:ring-1 focus:gray-500"
+            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:gray-500"
           />
         </div>
 
         <button
           type="submit"
-          className="w-full rounded-md bg-green-600 text-white py-2 font-semibold hover:bg-green-400 transition duration-700"
+          className=" flex justify-center w-full rounded-md bg-green-600 text-white py-2 font-semibold hover:bg-green-400 transition duration-700"
         >
-          Cadastrar Produto
+          {isLoading ? <Oval
+            visible={true}
+            height="24"
+            width="24"
+            color="white"
+            ariaLabel="oval-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+          /> :
+            <span>{id == undefined ? 'Cadastrar Produto' : 'Atualizar'}</span>
+          }
         </button>
       </form>
     </div>
