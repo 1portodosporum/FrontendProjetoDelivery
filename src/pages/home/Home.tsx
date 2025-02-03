@@ -36,10 +36,10 @@ export default function Home() {
           <h1 className="text-7xl md:text-7xl font-bold mb-6">Cê ta com fome? Pede ai!</h1>
           <p className="text-xl md:text-2xl mb-8">Pediu chegou!</p>
 
-          {usuario.tipo === "Cliente" && (
+          {usuario.tipo === "Cliente" || usuario.token === "" ? (
             <button className='bg-green-600 duration-700 hover:bg-green-400 text-white px-8 py-3 rounded-full text-base font-semibold'>
-            <Link to="/login">Peça já</Link>
-          </button>)}
+            {usuario.token === "" ? <Link to="/login">Peça já</Link>: <Link to="/cardapio">Peça já</Link>}
+          </button>):""}
 
         </div>
       </section>

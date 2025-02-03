@@ -173,7 +173,7 @@ export const FormProduto = () => {
 
         <button
           type="submit"
-          className="w-full rounded-md bg-green-500 text-white py-2 font-semibold hover:bg-green-400 transition duration-700"
+          className="w-full rounded-md bg-green-600 text-white py-2 font-semibold hover:bg-green-400 transition duration-700"
         >
           Cadastrar Produto
         </button>
