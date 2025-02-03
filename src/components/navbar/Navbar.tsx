@@ -44,8 +44,8 @@ function Navbar() {
 
                             {usuario.tipo === "Restaurante" && (
                                 <>
-                                    <Link to="/cadastrarpedido" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
-                                        Cadastrar Pedido
+                                    <Link to="/pedidos" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                                        Pedidos
                                     </Link>
                                     <Link to="/cadastrarproduto" className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
                                         Cadastrar Produto
