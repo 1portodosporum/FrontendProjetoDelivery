@@ -122,3 +122,5 @@ function Sobre() {
     </div>
   );
 }
+
+export default Sobre;
