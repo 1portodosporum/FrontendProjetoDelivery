@@ -8,8 +8,8 @@ export const FormPedido = () => {
           <input
             type="number"
             name="quantidade"
-            className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-      focus:outline-none focus:border-violet-500 focus:ring-1 focus:violet-500"
+            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400
+      focus:outline-none focus:border-orange-500 focus:ring-1 focus:gray-500"
             min="1"
           />
         </div>
@@ -18,8 +18,8 @@ export const FormPedido = () => {
           <input
             type="number"
             name="preco_total"
-            className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-      focus:outline-none focus:border-violet-500 focus:ring-1 focus:violet-500"
+            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400
+      focus:outline-none focus:border-orange-500 focus:ring-1 focus:gray-500"
             step="0.01"
           />
         </div>
@@ -27,8 +27,8 @@ export const FormPedido = () => {
           <label className="block text-sm">Status</label>
           <select
             name="status"
-            className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-      focus:outline-none focus:border-violet-500 focus:ring-1 focus:violet-500"
+            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400
+      focus:outline-none focus:border-orange-500 focus:ring-1 focus:gray-500"
           >
             <option value="Pendente">Pendente</option>
             <option value="Aprovado">Aprovado</option>
@@ -40,13 +40,13 @@ export const FormPedido = () => {
           <input
             type="number"
             name="produtoId"
-            className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-      focus:outline-none focus:border-violet-500 focus:ring-1 focus:violet-500"
+            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400
+      focus:outline-none focus:border-orange-500 focus:ring-1 focus:gray-500"
           />
         </div>
         <button
           type="submit"
-          className="w-full rounded-md bg-red-500 text-white py-2 font-semibold hover:bg-red-700 transition duration-700"
+          className="w-full rounded-md bg-green-600 text-white py-2 font-semibold hover:bg-green-400 transition duration-700"
         >
           Enviar Pedido
         </button>

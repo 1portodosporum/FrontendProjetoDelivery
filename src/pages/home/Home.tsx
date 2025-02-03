@@ -2,10 +2,14 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import CardProduto from '../../components/produto/cardproduto/CardProduto';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import produtosRecomendado from '../../components/produto/produtos/produtos';
+import { AuthContext } from '../../contexts/AuthContext';
 
 export default function Home() {
+
+  const { usuario } = useContext(AuthContext)
+
 
   const [scrollIndex, setScrollIndex] = useState(0);
   const visibleProducts = 3;
@@ -32,9 +36,11 @@ export default function Home() {
           <h1 className="text-7xl md:text-7xl font-bold mb-6">Cê ta com fome? Pede ai!</h1>
           <p className="text-xl md:text-2xl mb-8">Pediu chegou!</p>
 
-          <button className='bg-green-600 duration-700 hover:bg-green-400 text-white px-8 py-3 rounded-full text-base font-semibold'>
+          {usuario.tipo === "Cliente" && (
+            <button className='bg-green-600 duration-700 hover:bg-green-400 text-white px-8 py-3 rounded-full text-base font-semibold'>
             <Link to="/login">Peça já</Link>
-          </button>
+          </button>)}
+
         </div>
       </section>
 

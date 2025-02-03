@@ -35,8 +35,8 @@ function Login() {
       <div className="min-h-screen bg-gray-50 pt-10 flex items-center justify-center p-4">
         <section className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-xl w-full">
           <div className='flex flex-row justify-center'>
-            <h1 className="text-7xl md:text-7xl font-bold mb-6">
-              GEN<span className="text-red-900">ƒ</span>IT
+            <h1 className="text-5xl md:text-5xl font-bold mb-6">
+              AIKI FOME
             </h1>
           </div>
           <h2 className="text-3xl font-bold mb-4 text-center text-gray-800">Bem-vindo</h2>
@@ -73,7 +73,7 @@ function Login() {
     
             <button
               type="submit"
-              className="w-full rounded-md bg-red-500 text-white py-2 font-semibold hover:bg-red-700 transition duration-700"
+              className="w-full rounded-md bg-orange-500 text-white py-2 font-semibold hover:text-yellow-300 transition duration-700"
               disabled={isLoading}
             >
               {isLoading ? 'Entrando...' : 'Entrar'}
@@ -82,7 +82,7 @@ function Login() {
     
           <p className="text-center mt-6 text-sm text-gray-600">
             Não tem uma conta?{' '}
-            <Link to="/cadastro" className="font-medium text-red-600 hover:text-red-500">
+            <Link to="/cadastro" className="font-medium text-orange-600 hover:text-red-500">
               Cadastre-se
             </Link>
           </p>

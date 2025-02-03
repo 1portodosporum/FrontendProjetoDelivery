@@ -100,8 +100,8 @@ export const FormProduto = () => {
             value={produto.nome}
             onChange={updateState}
             required
-            className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-      focus:outline-none focus:border-violet-500 focus:ring-1 focus:violet-500"
+            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400
+      focus:outline-none focus:border-orange-500 focus:ring-1 focus:gray-500"
           />
         </div>
 
@@ -112,8 +112,8 @@ export const FormProduto = () => {
             name="descricao"
             value={produto.descricao}
             onChange={updateState}
-            className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-      focus:outline-none focus:border-violet-500 focus:ring-1 focus:violet-500"
+            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400
+      focus:outline-none focus:border-orange-500 focus:ring-1 focus:gray-500"
           />
         </div>
 
@@ -124,8 +124,8 @@ export const FormProduto = () => {
             name="preco"
             value={produto.preco}
             onChange={updateState}
-            className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-      focus:outline-none focus:border-violet-500 focus:ring-1 focus:violet-500"
+            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400
+      focus:outline-none focus:border-orange-500 focus:ring-1 focus:gray-500"
           />
         </div>
 
@@ -137,7 +137,7 @@ export const FormProduto = () => {
             value={produto.categoria}
             required
             onChange={(e) => setProduto({ ...produto, categoria: e.target.value })}
-            className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-violet-500 focus:ring-1 focus:violet-500">
+            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:gray-500">
             <option value=""> Selecione ...</option>
             <option value="Bebida">Bebida</option>
             <option value="Comida">Comida</option>
@@ -166,14 +166,14 @@ export const FormProduto = () => {
             value={produto.imagem}
             onChange={updateState}
             placeholder="Foto"
-            className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-      focus:outline-none focus:border-violet-500 focus:ring-1 focus:violet-500"
+            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400
+      focus:outline-none focus:border-orange-500 focus:ring-1 focus:gray-500"
           />
         </div>
 
         <button
           type="submit"
-          className="w-full rounded-md bg-red-500 text-white py-2 font-semibold hover:bg-red-700 transition duration-700"
+          className="w-full rounded-md bg-green-500 text-white py-2 font-semibold hover:bg-green-400 transition duration-700"
         >
           Cadastrar Produto
         </button>

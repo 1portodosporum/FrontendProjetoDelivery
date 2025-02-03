@@ -67,7 +67,7 @@ function Cadastro() {
         <h2 className="text-3xl font-bold mb-4 text-center">Criar Conta</h2>
         <p className="text-center text-sm text-gray-600">
           Já tem uma conta?{' '}
-          <Link to="/login" className="font-medium text-red-600 hover:text-red-500">
+          <Link to="/login" className="font-medium text-orange-600 hover:text-yellow-300">
             Faça login
           </Link>
         </p>
@@ -161,7 +161,7 @@ function Cadastro() {
 
           <button
             type="submit"
-            className="w-full rounded-md bg-red-500 text-white py-2 font-semibold hover:bg-red-700 transition duration-700"
+            className="w-full rounded-md bg-orange-500 text-white py-2 font-semibold hover:bg-orange-700 transition duration-700"
             disabled={isLoading}
           >
             {isLoading ? 'Cadastrando...' : 'Cadastrar'}
@@ -169,7 +169,7 @@ function Cadastro() {
 
           <button
             type="button"
-            className="w-full mt-2 rounded-md bg-gray-400 text-white py-2 font-semibold hover:bg-gray-600 transition duration-700"
+            className="w-full mt-2 rounded-md bg-green-600 text-white py-2 font-semibold hover:bg-green-400 transition duration-700"
             onClick={retornar}
           >
             Voltar
