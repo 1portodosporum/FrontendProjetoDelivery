@@ -1,4 +1,4 @@
-import { LogIn, ShoppingBag } from "lucide-react";
+import { LogIn } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useContext } from "react";
