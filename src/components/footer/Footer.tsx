@@ -1,38 +1,47 @@
+import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { Link } from 'react-router-dom';
+
 function Footer() {
     return (
-        <footer className="bg-orange-500 rounded-lg shadow-sm dark:bg-orange-700 m-4">
-            <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-                <div className="sm:flex sm:items-center sm:justify-between">
-                    <a href="#" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                        <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Aiki Fome</span>
-                    </a>
-                    <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-white sm:mb-0">
-                        <li>
-                            <a href="#" className="hover:underline me-4 md:me-6">Sobre</a>
-                        </li>
-                        <li>
-                            <a href="#" className="hover:underline">Contato</a>
-                        </li>
-                    </ul>
-                </div>
-                <div className="sm:flex sm:items-center sm:justify-between mt-4">
-                    <div className="flex space-x-4">
-                        <a href="#" className="text-white hover:text-yellow-300 transition duration-300 ease-in-out transform hover:scale-110">
-                            <i className="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" className="text-white hover:text-yellow-300 transition duration-300 ease-in-out transform hover:scale-110">
-                            <i className="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" className="text-white hover:text-yellow-300 transition duration-300 ease-in-out transform hover:scale-110">
-                            <i className="fab fa-instagram"></i>
-                        </a>
+        <footer className="bg-slate-900 text-white">
+            <div className="max-w-7xl mx-auto px-4 py-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 className="text-xl font-bold mb-4">AIK📍FOME</h3>
+                        <p className="text-gray-300">
+                            Seu delivery favorito e com
+                        </p>
+                        <p className="text-gray-300">
+                            os melhores pratos da cidade.
+                        </p>
+                    </div>
+                    <div>
+                        
+
+                        <h3 className="text-xl font-bold mb-4">Contato</h3>
+                        <Link to="/Sobre" className="text-gray-300 hover:text-white">
+                            Sobre
+                        </Link>
+                        <p className="text-gray-300">contato@umporto.com</p>
+                        <p className="text-gray-300">(11) 99999-9999</p>
+                        
+
+                    </div>
+                    <div>
+                        <h3 className="text-xl font-bold mb-4">Redes Sociais</h3>
+                        <div className="flex space-x-4">
+                            <a href="#" className="text-gray-300 hover:text-white">
+                                <Facebook className="h-6 w-6" />
+                            </a>
+                            <a href="#" className="text-gray-300 hover:text-white">
+                                <Instagram className="h-6 w-6" />
+                            </a>
+                            <a href="#" className="text-gray-300 hover:text-white">
+                                <Linkedin className="h-6 w-6" />
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <hr className="my-6 border-yellow-300 sm:mx-auto lg:my-8" />
-                <span className="block text-sm text-white sm:text-center">
-                    <p className="mt-12 pt-8 border-t border-gray-200 text-center text-gray-400 text-sm "> &copy; 2025 Todos os direitos reservados | AIKI FOME
-                        <i className='bx bx-anchor'></i> </p>
-                </span>
             </div>
         </footer>
     );
