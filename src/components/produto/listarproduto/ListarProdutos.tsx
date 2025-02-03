@@ -5,6 +5,7 @@ import ProdutoServices from "../../../services/ProdutoServices";
 import Produto from "../../../models/Produto";
 import CardProduto from "../cardproduto/CardProduto";
 import { GlassWaterIcon, IceCream, Leaf, Pizza, Sandwich, Utensils, XCircle } from "lucide-react";
+import { FallingLines } from "react-loader-spinner";
 
 function ListarProdutos() {
     const navigate = useNavigate();
@@ -17,7 +18,10 @@ function ListarProdutos() {
     const { usuario, handleLogout } = useContext(AuthContext);
     const token = usuario.token;
 
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+
     async function buscarProdutos() {
+        setIsLoading(true);
         try {
             await produtoServices.listProdutos("/produtos", setProdutos, {
                 headers: { Authorization: token },
@@ -27,6 +31,7 @@ function ListarProdutos() {
                 handleLogout();
             }
         }
+        setIsLoading(false);
     }
 
     useEffect(() => {
@@ -110,11 +115,17 @@ function ListarProdutos() {
             </section>
 
             <section className="flex flex-wrap justify-center gap-4 p-10">
-                {produtosFiltrados.length > 0 ? (
+                {isLoading ?
+                    <div className="flex justify-center items-center min-h-[100vh] min-w-[100vw]">
+                        <FallingLines
+                            color="#4fa94d"
+                            width="100"
+                            visible={true}
+                        />
+                    </div>
+                    :
                     produtosFiltrados.map((produto) => <CardProduto key={produto.id} produto={produto} />)
-                ) : (
-                    <p className="text-gray-600 text-lg">Nenhum produto encontrado para essa categoria.</p>
-                )}
+                }
             </section>
         </>
     );
