@@ -48,66 +48,57 @@ function ListarProdutos() {
     });
     return (
         <>
-            <section>
-                <div className="text-center flex-col h-1/3 flex items-center justify-items-center p-4 bg-gray-200">
-                    <p className="text-xl text-gray-600 mt-4">Filtre por categoria...</p>
-                    <div className="flex gap-3 mt-4">
-                        <button
-                            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition ${
-                                somenteSaudaveis ? "bg-green-500 text-white" : "bg-gray-300 text-gray-800 hover:bg-gray-400"
+            <section className="text-center flex-col h-1/3 flex items-center justify-items-center p-4 bg-orange-100">
+                <div className="flex gap-3 mt-4">
+                    <button
+                        className={`flex items-center gap-2 px-4 py-2 rounded-lg transition ${somenteSaudaveis ? "bg-green-500 text-white" : "bg-orange-100 text-gray-800 hover:bg-orange-200"
                             }`}
-                            onClick={() => setSomenteSaudaveis(!somenteSaudaveis)}
-                        >
-                            <Leaf size={20} /> Saudáveis
-                        </button>
-                        <button
-                            className={`flex items-center gap-2 px-4 py-2 rounded-lg z-50 transition ${
-                                categoriaSelecionada === "Bebida" ? "bg-orange-500 text-white" : "bg-gray-300 text-gray-800"
+                        onClick={() => setSomenteSaudaveis(!somenteSaudaveis)}
+                    >
+                        <Leaf size={20} /> Saudáveis
+                    </button>
+                    <button
+                        className={`flex items-center gap-2 px-4 py-2 rounded-lg z-50  transition ${categoriaSelecionada === "Bebida" ? "bg-orange-500 text-white" : "bg-orange-100 text-gray-800 hover:bg-orange-200"
                             }`}
-                            onClick={() => setCategoriaSelecionada("Bebida")}
-                        >
-                        
+                        onClick={() => setCategoriaSelecionada("Bebida")}
+                    >
+
                         <GlassWaterIcon size={20} /> Bebidas
-                        </button>
-                        <button
-                            className={`flex items-center gap-2 px-4 py-2 rounded-lg z-50 transition ${
-                                categoriaSelecionada === "Comida" ? "bg-orange-500 text-white" : "bg-gray-300 text-gray-800"
+                    </button>
+                    <button
+                        className={`flex items-center gap-2 px-4 py-2 rounded-lg z-50 transition ${categoriaSelecionada === "Comida" ? "bg-orange-500 text-white" : "bg-orange-100 text-gray-800 hover:bg-orange-200"
                             }`}
-                            onClick={() => setCategoriaSelecionada("Comida")}
-                        >
-                             <Utensils size={20} />Comidas
-                        </button>
-                        <button
-                            className={`flex items-center gap-2 px-4 py-2 rounded-lg z-50 transition ${
-                                categoriaSelecionada === "Sobremesa" ? "bg-orange-500 text-white" : "bg-gray-300 text-gray-800"
+                        onClick={() => setCategoriaSelecionada("Comida")}
+                    >
+                        <Utensils size={20} />Comidas
+                    </button>
+                    <button
+                        className={`flex items-center gap-2 px-4 py-2 rounded-lg z-50 transition ${categoriaSelecionada === "Sobremesa" ? "bg-orange-500 text-white" : "bg-orange-100 text-gray-800 hover:bg-orange-200"
                             }`}
-                            onClick={() => setCategoriaSelecionada("Sobremesa")}
-                        >
-                             <IceCream size={20} /> Sobremesas
-                        </button>
-                        <button
-                            className={`flex items-center gap-2 px-4 py-2 rounded-lg z-50 transition ${
-                                categoriaSelecionada === "Pizza" ? "bg-orange-500 text-white" : "bg-gray-300 text-gray-800"
+                        onClick={() => setCategoriaSelecionada("Sobremesa")}
+                    >
+                        <IceCream size={20} /> Sobremesas
+                    </button>
+                    <button
+                        className={`flex items-center gap-2 px-4 py-2 rounded-lg z-50 transition ${categoriaSelecionada === "Pizza" ? "bg-orange-500 text-white" : "bg-orange-100 text-gray-800 hover:bg-orange-200"
                             }`}
-                            onClick={() => setCategoriaSelecionada("Pizza")}
-                        >
-                             <Pizza size={20} /> Pizza
-                        </button>
-                        <button
-                            className={`flex items-center gap-2 px-4 py-2 rounded-lg z-50 transition ${
-                                categoriaSelecionada === "Lanche" ? "bg-orange-500 text-white" : "bg-gray-300 text-gray-800"
+                        onClick={() => setCategoriaSelecionada("Pizza")}
+                    >
+                        <Pizza size={20} /> Pizza
+                    </button>
+                    <button
+                        className={`flex items-center gap-2 px-4 py-2 rounded-lg z-50 transition ${categoriaSelecionada === "Lanche" ? "bg-orange-500 text-white" : "bg-orange-100 text-gray-800 hover:bg-orange-200"
                             }`}
-                            onClick={() => setCategoriaSelecionada("Lanche")}
-                        >
-                            <Sandwich size={20} /> Lanches
-                        </button>
-                        <button
-                            className="flex items-center gap-2 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
-                            onClick={() => setCategoriaSelecionada(null)}
-                        >
-                            <XCircle size={20} /> Mostrar Todos
-                        </button>
-                    </div>
+                        onClick={() => setCategoriaSelecionada("Lanche")}
+                    >
+                        <Sandwich size={20} /> Lanches
+                    </button>
+                    <button
+                        className="flex items-center gap-2 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+                        onClick={() => setCategoriaSelecionada(null)}
+                    >
+                        <XCircle size={20} /> Mostrar Todos
+                    </button>
                 </div>
             </section>
 
