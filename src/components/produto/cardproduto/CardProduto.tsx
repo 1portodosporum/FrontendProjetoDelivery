@@ -22,11 +22,11 @@ const CardProduto = ({ produto }: CardProdutoProps) => {
 
     const botaoComprar = (
         <div className="flex justify-center px-6 py-4">
-            <button
-                onClick={abrirModal}
-                className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600">
-                Comprar
-            </button>
+        {usuario.token == "" ?
+        (<Link to="/login" className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600">Comprar</Link>) :
+        (<button onClick={abrirModal} className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600">Comprar</button>)
+
+        }
         </div>
     )
     
