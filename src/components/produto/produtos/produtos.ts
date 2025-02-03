@@ -2,7 +2,7 @@ import Produto from "../../../models/Produto";
 
 const produtosRecomendado: Produto[] = [
     {
-      id: 1,
+      id: 13232,
       nome: 'Salada',
       preco: 25.0,
       descricao: 'Salada de agrião agridoce.',
@@ -11,7 +11,7 @@ const produtosRecomendado: Produto[] = [
       saudavel: true,
     },
     {
-      id: 2,
+      id: 23232,
       nome: 'Strogonoff fit',
       preco: 45.0,
       descricao: 'Strogonoff fit com batata-doce.',
@@ -20,7 +20,7 @@ const produtosRecomendado: Produto[] = [
       saudavel: true,
     },
     {
-      id: 3,
+      id: 33232,
       nome: 'Omelete',
       preco: 24.9,
       descricao: 'Delicioso omelete de 2 ovos.',
@@ -29,7 +29,7 @@ const produtosRecomendado: Produto[] = [
       saudavel: true,
     },
     {
-      id: 4,
+      id: 43232,
       nome: 'Strogonoff de azeitona',
       preco: 32.8,
       descricao: 'Strogonoff de azeitona.',
@@ -38,7 +38,7 @@ const produtosRecomendado: Produto[] = [
       saudavel: false,
     },
     {
-      id: 5,
+      id: 53232,
       nome: 'Espaguete de abobrinha',
       preco: 50.0,
       descricao: 'Espaguete de abobrinha.',
@@ -47,7 +47,7 @@ const produtosRecomendado: Produto[] = [
       saudavel: true,
     },
     {
-      id: 6,
+      id: 63232,
       nome: 'Salada de frutas',
       preco: 15.0,
       descricao: 'Salada de frutas.',
@@ -56,7 +56,7 @@ const produtosRecomendado: Produto[] = [
       saudavel: true,
     },
     {
-      id: 7,
+      id: 73232,
       nome: 'Hamburguer',
       preco: 20.0,
       descricao: 'Hamburguer artesanal.',
@@ -65,7 +65,7 @@ const produtosRecomendado: Produto[] = [
       saudavel: false,
     },
     {
-      id: 8,
+      id: 83232,
       nome: 'Sorvete',
       preco: 10.0,
       descricao: 'Sorvete de chocolate.',
