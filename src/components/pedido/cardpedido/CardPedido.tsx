@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
 import PedidoServices from "../../../services/PedidoServices";
 import { ToastAlert } from "../../../utils/ToastAlert";
+import { useNavigate } from "react-router-dom";
 
 interface CardPedidoProps {
     pedido: Pedido;
@@ -12,6 +13,8 @@ interface CardPedidoProps {
 const CardPedido = ({ pedido }: CardPedidoProps) => {
     const { usuario } = useContext(AuthContext);
     const token = usuario.token;
+
+    const navigate = useNavigate();
 
     const setPedido = () => { 
         return pedido;
@@ -40,7 +43,7 @@ const CardPedido = ({ pedido }: CardPedidoProps) => {
             ToastAlert("Erro ao remover pedido!", "error");
         }
         fecharModal();
-        window.location.reload();
+        navigate("/pedidos");
     };
 
     const atualizarStatusPedido = async () => {
@@ -58,7 +61,7 @@ const CardPedido = ({ pedido }: CardPedidoProps) => {
     
             ToastAlert("Status atualizado!", "success");
             fecharModalEditar();
-            window.location.reload();
+            navigate("/pedidos");
         } catch (error) {
             ToastAlert("Erro ao atualizar status!", "error");
         }
