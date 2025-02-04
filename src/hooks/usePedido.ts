@@ -3,6 +3,7 @@ import PedidoServices from '../services/PedidoServices';
 import { AuthContext } from '../contexts/AuthContext';
 import { ToastAlert } from '../utils/ToastAlert';
 import Produto from '../models/Produto';
+import { useNavigate } from 'react-router-dom';
 
 export const usePedido = () => {
     const { usuario } = useContext(AuthContext);
@@ -13,6 +14,7 @@ export const usePedido = () => {
 
     const [modalDeleteAberto, setModalDeleteAberto] = useState(false);
 
+    const navigate = useNavigate();
 
     const pedidoServices = new PedidoServices();
     const produtoServices = new PedidoServices();
@@ -66,9 +68,9 @@ export const usePedido = () => {
         }
         setIsLoading(false)
         fecharModalDelete();
-        //atualiar a pagina depois de fechar o toast alert
+        
         setTimeout(() => {
-            window.location.reload();
+            navigate("/pedidos");
         }, 3000);
     }
 
