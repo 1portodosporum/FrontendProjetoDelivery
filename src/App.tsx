@@ -12,6 +12,7 @@ import ListarProdutos from './components/produto/listarproduto/ListarProdutos';
 import ListarMeusPedidos from './components/pedido/listarmeuspedidos/ListarMeusPedidos';
 import { ListarPedidos } from './components/pedido/listarpedidos/ListarPedidos';
 import Sobre from './pages/sobre/Sobre';
+import CardPerfil from './pages/sobre/cardperfil/CardPefil';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
               <Route path="/cadastrarproduto/:id" element={<FormProduto />} />
               <Route path="/pedidos" element={<ListarPedidos />} />
               <Route path="/sobre" element={<Sobre />} />
+              <Route path='/card' element={< CardPerfil />} />
             </Routes>
           </main>
         </BrowserRouter>
