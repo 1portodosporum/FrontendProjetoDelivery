@@ -37,8 +37,6 @@ function App() {
               <Route path="/cadastrarproduto/:id" element={<FormProduto />} />
               <Route path="/pedidos" element={<ListarPedidos />} />
               <Route path="/sobre" element={<Sobre />} />
-              <Route path="/listar" element={<ListarPefil />} />
-
             </Routes>
           </main>
         </BrowserRouter>
