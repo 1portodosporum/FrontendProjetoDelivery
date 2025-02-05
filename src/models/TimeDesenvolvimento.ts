@@ -7,3 +7,5 @@ interface TimeDesenvolvimento {
     linkedin?: string;
     github?: string;
 }
+
+export default TimeDesenvolvimento;
