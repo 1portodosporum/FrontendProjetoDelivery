@@ -12,6 +12,7 @@ import ListarProdutos from './components/produto/listarproduto/ListarProdutos';
 import ListarMeusPedidos from './components/pedido/listarmeuspedidos/ListarMeusPedidos';
 import { ListarPedidos } from './components/pedido/listarpedidos/ListarPedidos';
 import Sobre from './pages/sobre/Sobre';
+import ListarPefil from './pages/sobre/listarperfil/ListarPefil';
 
 
 function App() {
